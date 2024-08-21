@@ -29,12 +29,12 @@ jobs:
 
       - name: Build executable
         run: |
-          pyinstaller --onefile --windowed replacer.py
+          pyinstaller --noconsole --onefile doctemplatex.py
         shell: bash
 
       - name: Archive Executable (linux)
         if: matrix.os == 'ubuntu-latest'
-        run: zip -r doctemplatex_linux.zip dist/
+        run: zip -r doctemplatex_linux.zip dist/doctemplatex
         shell: bash
 
       - name: Archive Executable (windows)
@@ -44,7 +44,7 @@ jobs:
 
       - name: Archive Executable (macos)
         if: matrix.os == 'macos-latest'
-        run: zip -r doctemplatex_macos.zip dist/
+        run: zip -r doctemplatex_macos.zip dist/doctemplatex
         shell: bash
 
       - name: Upload Artifact
@@ -59,9 +59,17 @@ jobs:
     steps:
       - name: Download artifacts
         uses: actions/download-artifact@v3
-        with:
-          files: |
-            artifacts/doctemplatex_*.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            /home/runner/work/doctemplatex/doctemplatex/ubuntu-latest-executable/**/*
+            /home/runner/work/doctemplatex/doctemplatex/windows-latest-executable/**/*
+            /home/runner/work/doctemplatex/doctemplatex/macos-latest-executable/**/*
+          token: ${{ secrets.TOKEN }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+
 
