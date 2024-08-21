@@ -1,6 +1,6 @@
-# Word Doc Replacer
+# DocTemplateX
 
-A simple tkinter GUI app that replaces mail merge codes in a word document with user input.
+A tkinter GUI app that replaces merge codes in a word document with user input. Effectively allowing you to create templates with defaults out of .docx files.
 
 ## Installation
 
@@ -35,10 +35,10 @@ python3 replacer.py
 
 ## Usage
 
-Put mail merge codes in your word document for things you need to replace often in documents.
+Put merge codes in your word document for things you need to replace often in documents.
 
 ```
-These codes are formatted like this: {Field|DefaultValue}
+These codes are formatted like this: {FieldName|DefaultValue}
 ```
 
 When you run the program and select a `.docx` file, it will scan for merge codes.
@@ -62,9 +62,9 @@ Sincerely,
 {Sender|Uncle Ben}
 ```
 
-This way, Uncle Ben can use this formatted document to make personalized messages to many young force sensitives and just switch out the key components of the message.
+This way, Uncle Ben can use this formatted document to make personalized messages to many young force sensitives and switch out the key components of the message.
 
-## TODO
+## Contributing
 
 This project is still in development. Here are some things I plan to add:
 

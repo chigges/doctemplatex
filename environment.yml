@@ -1,4 +1,4 @@
-name: word-replacer
+name: doctemplatex
 channels:
   - conda-forge
   - defaults
@@ -27,4 +27,4 @@ dependencies:
   - wheel=0.43.0
   - xz=5.4.6
   - zlib=1.2.13
-prefix: /opt/homebrew/anaconda3/envs/word-replacer
+prefix: ./env/doctemplatex
