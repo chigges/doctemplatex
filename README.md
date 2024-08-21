@@ -4,6 +4,11 @@ A tkinter GUI app that replaces merge codes in a word document with user input. 
 
 ## Installation
 
+### From Release
+
+Download the latest release on the 'releases' tab.
+
+### From Source
 To install the project, clone the repository and enter the project directory:
 
 ```bash
@@ -13,7 +18,7 @@ cd word-doc-replacer
 
 To install dependencies, you can use conda or pip:
 
-### Conda
+#### Conda
 
 Then, create a conda environment from the `environment.yml` file and activate it:
 
@@ -24,13 +29,13 @@ conda activate word-replacer
 
 If you prefer not to use conda, you may use any other package manager to install the dependencies listed in `environment.yml`.
 
-### Pip
+#### Pip
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### Other
+#### Other
 
 The main two dependencies for this project are `tk` and `python-docx` if you want to install them individually.
 
