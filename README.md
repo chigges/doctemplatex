@@ -6,30 +6,39 @@ A tkinter GUI app that replaces merge codes in a word document with user input. 
 
 To install the project, clone the repository and enter the project directory:
 
-```
+```bash
 git clone https://github.com/CtrlAltDelight/word-doc-replacer
 cd word-doc-replacer
 ```
 
+To install dependencies, you can use conda or pip:
+
+### Conda
+
 Then, create a conda environment from the `environment.yml` file and activate it:
 
-```
+```bash
 conda env create -f environment.yml
 conda activate word-replacer
 ```
 
-If you would rather not use conda, you may use any other package manager to install the dependencies listed in `environment.yml`.
+If you prefer not to use conda, you may use any other package manager to install the dependencies listed in `environment.yml`.
 
-Otherwise, you can install the following dependencies manually (Check environment.yml for the most up-to-date list of dependencies):
+### Pip
 
+```bash
+pip install -r requirements.txt
 ```
-tk
-python-docx
-```
 
-Now, run the program:
+### Other
 
-```
+The main two dependencies for this project are `tk` and `python-docx` if you want to install them individually.
+
+## Running the program
+
+To run the program:
+
+```bash
 python3 replacer.py
 ```
 
@@ -41,9 +50,7 @@ Put merge codes in your word document for things you need to replace often in do
 These codes are formatted like this: {FieldName|DefaultValue}
 ```
 
-When you run the program and select a `.docx` file, it will scan for merge codes.
-
-The program will populate each field with the default value and prompt you to change them. Once you have made necessary changes, you can save the file as a new document.
+When you run the program and select a `.docx` file, it will scan for merge codes. The program will populate each field with the default value and prompt you to change them. Once you have made necessary changes, you can save the file as a new document.
 
 Voila! You've just replaced merge codes in a word document!
 
@@ -69,7 +76,7 @@ This way, Uncle Ben can use this formatted document to make personalized message
 This project is still in development. Here are some things I plan to add:
 
 - [ ] Add support for more file types like .pages, .txt, .pdf, etc.
-- [ ] Add support for more complex mail merge codes like loops and conditionals
+- [ ] Add support for more complex mail merge codes, such as loops and conditionals
 - [ ] Make the GUI more user-friendly (add tooltips, better error messagest, etc.)
 - [ ] Arrange the GUI elements in a more satisfying way
 - [ ] Add a progress bar for long documents
